@@ -347,4 +347,31 @@ public class RadioTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void relevantConditionsUp() {
+        Radio radio = new Radio(30);
+        radio.setIncreaseNumberStation(20);
+
+        radio.NumberStationUp();
+
+        int expected = 21;
+        int actual = radio.getNumberStation();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+        @Test
+        public void relevantConditionsDown() {
+            Radio radio = new Radio(30);
+            radio.setIncreaseNumberStation(20);
+
+            radio.NumberStationDown();
+
+            int expected = 19;
+            int actual = radio.getNumberStation();
+
+            Assert.assertEquals(expected, actual);
+
+    }
+
 }

@@ -2,12 +2,34 @@ package org.example;
 
 public class Radio {
     private int volume;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+    int getMaxVolume() {
+        return maxVolume;
+    }
+
+    int getMinVolume() {
+        return minVolume;
+    }
 
     int getVolume() {
         return volume;
     }
 
     private int numberStation;
+    private int maxNumberStation = 9;
+    private int minNumberStation = 0;
+    int totalStations = 10;
+
+    public Radio ( int totalStations) {
+        this.minNumberStation = 0;
+        this.maxNumberStation = 29;
+
+    }
+
+    public Radio () {
+
+    }
 
     int getNumberStation() {
         return numberStation;
@@ -15,37 +37,37 @@ public class Radio {
 
     public void setVolume(int newVolume) {
 
-        if (newVolume > 100) {
-            newVolume = 100;
+        if (newVolume > maxVolume) {
+            newVolume = maxVolume;
         }
         volume = newVolume;
     }
 
     public void setReduceVolume(int newVolume) {
-        if (newVolume < 0) {
-            newVolume = 0;
+        if (newVolume < minVolume) {
+            newVolume = minVolume;
         }
         volume = newVolume;
     }
 
     public void setIncreaseNumberStation(int newNumberStation) {
-        if (newNumberStation > 9) {
-            newNumberStation = 9;
+        if (newNumberStation > maxNumberStation) {
+            newNumberStation = maxNumberStation;
         }
         numberStation = newNumberStation;
     }
 
     public void setReduceNumberStation(int newNumberStation) {
-        if (newNumberStation < 0) {
-           newNumberStation = 0;
+        if (newNumberStation < minNumberStation) {
+           newNumberStation = minNumberStation;
         }
         numberStation = newNumberStation;
     }
 
     public void volumeUp() {
         int target = volume + 1;
-        if (target > 100) {
-            target = 100;
+        if (target > maxVolume) {
+            target = maxVolume;
         }
         volume = target;
 
@@ -53,16 +75,16 @@ public class Radio {
 
     public void volumeDown() {
         int target = volume - 1;
-        if (target < 0) {
-            target = 0;
+        if (target < minVolume) {
+            target = minVolume;
         }
         volume = target;
     }
 
     public void NumberStationUp() {
         int target = numberStation + 1;
-        if (target > 9) {
-            target = 0;
+        if (target > maxNumberStation) {
+            target = minNumberStation;
         }
         numberStation = target;
 
@@ -70,8 +92,8 @@ public class Radio {
 
     public void NumberStationDown() {
         int target = numberStation - 1;
-        if (target < 0) {
-            target = 9;
+        if (target < minNumberStation) {
+            target = maxNumberStation;
         }
         numberStation = target;
 
