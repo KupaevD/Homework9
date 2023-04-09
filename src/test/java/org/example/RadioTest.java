@@ -10,16 +10,16 @@ public class RadioTest {
 
 
     @Test
-        public void radioTestLessThanTheMinimum() {
-            Radio radio = new Radio();
-            radio.setVolume(-1);
+    public void radioTestLessThanTheMinimum() {
+        Radio radio = new Radio();
+        radio.setVolume(-1);
 
-            radio.volumeUp();
+        radio.volumeUp();
 
-            int expected = 0;
-            int actual = radio.getVolume();
+        int expected = 0;
+        int actual = radio.getVolume();
 
-            Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -360,17 +360,17 @@ public class RadioTest {
         Assert.assertEquals(expected, actual);
     }
 
-        @Test
-        public void relevantConditionsDown() {
-            Radio radio = new Radio(30);
-            radio.setIncreaseNumberStation(20);
+    @Test
+    public void relevantConditionsDown() {
+        Radio radio = new Radio(30);
+        radio.setIncreaseNumberStation(20);
 
-            radio.NumberStationDown();
+        radio.NumberStationDown();
 
-            int expected = 19;
-            int actual = radio.getNumberStation();
+        int expected = 19;
+        int actual = radio.getNumberStation();
 
-            Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
 
     }
 
